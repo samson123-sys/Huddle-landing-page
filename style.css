@@ -1,0 +1,236 @@
+/* ===========compent============= */
+
+
+:root{
+/* ## Colors */
+
+/* ### Primary */
+
+--clr-Violet: hsl(257, 40%, 49%);
+--Soft-Magenta: hsl(300, 69%, 71%);
+--clr-White:hsl(0, 0%, 100%);
+
+
+/* TYPO */
+--ff-Open: 'Open Sans', sans-serif;
+--ff-pop: 'Poppins', sans-serif;
+
+--fs-1: 1.3rem;
+--fs-2: .9rem;
+--fs-3: .7rem;
+--fs-4: .8rem;
+
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===========components========== */
+
+body{
+    background: url(./images/bg-mobile.svg);
+    background-repeat: no-repeat;
+    background-color: var(--clr-Violet);
+    font-family: 'Poppins', sans-serif;
+    color: var(--clr-White);
+}
+
+.fs-1{font-size: var(--fs-1);}
+.fs-2{font-size: var(--fs-2);}
+.fs-3{font-size: var(--fs-3);}
+
+.main{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    min-width: 200px;
+    padding: 2em 2em; 
+}
+.logo{
+    aspect-ratio: 1/1;
+    width: 110px;
+}
+.heading{
+  text-align: center;
+  font-weight: 600;
+  padding-inline: 1em;
+}
+.hero{
+    margin-block: 2.5em; 
+    width: 100%;
+    margin-inline: auto;
+}
+.para{
+    font-family: var(--ff-Open);
+    text-align: center;
+    font-weight: 400;
+    margin-top: .9em;
+    padding-inline: 1.2em;
+}
+.btn{
+    margin: 30px auto;
+    min-width: 150px;
+    display: block;
+    color: var(--clr-Violet);
+    padding: .9em 7em;
+    border-radius: 50px;
+    border: none;
+    font-size: var(--fs-3);
+    box-shadow: 0px 14px 55px 7px rgba(0,0,0,0.48);
+    -webkit-box-shadow: 0px 14px 55px 7px rgba(0,0,0,0.48);
+    -moz-box-shadow: 0px 14px 55px 7px rgba(0,0,0,0.48);
+}
+.btn:hover,
+.btn:active{
+  background-color: var(--Soft-Magenta);
+  color: var(--clr-White);
+}
+.icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em
+}
+.fa-brands{
+    font-size: var(--fs-3);
+    margin-top: 25px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--clr-White);
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+}
+.fa-brands:hover,
+.fa-brands:active{
+    border: 1px solid var(--Soft-Magenta);
+    color: var(--Soft-Magenta);
+}
+
+@media (min-width: 23.75em){
+    body{
+        background-image: none;
+    }
+}
+@media (min-width: 60em){
+    body{
+        background-image: url(./images/bg-desktop.svg);
+        background-size: cover;
+    }
+
+    .container{
+        display: flex;
+        flex: 1;
+        gap: 50px;
+    }
+    .logo{
+        width: 170px;
+    }
+    .img{
+        width:900px;
+    }
+    .heading,
+    .para{
+        text-align: left;
+        padding-inline: 0;
+    }
+    .heading{
+        font-size: 2rem;
+    }
+    .para{
+        font-size: .8rem;
+        font-weight: 400;
+    }
+    .btn{
+        display: inline-block;
+        align-items: flex-start;
+        padding: 1em 4em;
+        font-size: var(--fs-2);
+    }
+    .icons{
+        justify-content: flex-end;
+       
+    }
+   
+    
+    .fa-brands{
+        width: 50px;
+        height: 50px;
+        font-size: var(--fs-2);
+        border: 1.5px solid var(--clr-White);
+        display: grid;
+        place-items: center;
+    }
+}
